@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>banderaunte</title>
+  <link rel="stylesheet" href="./css/contacto.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="menu.html">Menú</a></li>
+        <li><a href="reservas.html">Reservas</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="sesion.html">Iniciar sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Sobre nosotros</h2>
+      <p>Información sobre el restaurante y su historia.</p>
+    </section>
+    <section>
+      <h2>Novedades</h2>
+      <p>Últimas noticias y actualizaciones sobre el restaurante.</p>
+    </section>
+    <section>
+      <h2>Opiniones</h2>
+      <p>Califica nuestro negocio:</p>
+      <div class="rating">
+        <input type="radio" name="rating" value="5" id="5"><label for="5">★</label>
+        <input type="radio" name="rating" value="4" id="4"><label for="4">★</label>
+        <input type="radio" name="rating" value="3" id="3"><label for="3">★</label>
+        <input type="radio" name="rating" value="2" id="2"><label for="2">★</label>
+        <input type="radio" name="rating" value="1" id="1"><label for="1">★</label>
+      </div>
+      <p>Deja tus comentarios y sugerencias en el siguiente formulario:</p>
+      <form>
+        <input type="text" name="name" placeholder="Nombre"><br>
+        <input type="email" name="email" placeholder="Correo electrónico"><br>
+        <textarea name="comments" placeholder="Comentarios"></textarea><br>
+        <input type="submit" value="Enviar">
+      </form>
+    </section>
+    <section>
+      <h2>Ubicación</h2>
+      <p>Aquí se mostraría un mapa con la ubicación del restaurante.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="redes-sociales">
+      <a href="#"><img src="facebook.png" alt="Facebook" /></a>
+      <a href="#"><img src="twitter.png" alt="Twitter" /></a>
+      <a href="#"><img src="instagram.png" alt="Instagram" /></a>
+    </div>
+    <p>banderaunte &copy; 2023</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
