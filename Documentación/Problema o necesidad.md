@@ -1,0 +1,2 @@
+# Problema
+## Análisis del problema
