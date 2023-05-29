@@ -1,90 +1,113 @@
 <!DOCTYPE html>
 
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>banderaunte</title>
-    <link rel="stylesheet" href="./css/style.css">
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div class="navbar">
-          <div class="logo">
-            <img src="plato1.jpg" alt="Plato 1" />
-          </div>
-          <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="menu.html">Menú</a></li>
-            <li><a href="reservas.html">Reservas</a></li>
-            <li><a href="sesion.html">Iniciar sesión</a></li>
-          </ul>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>banderaunte</title>
+  <!-- <link href="https://cdn.jsdelivr.net/npm/glider-js@1.7.8/glider.min.css" rel="stylesheet"> -->
+  <!-- <link rel="stylesheet" type="text/css" href="glider.css"> -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="navbar">
+        <div class="logo">
+          <img src="plato1.jpg" alt="Plato 1" />
         </div>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero">
-        <h1>Bienvenidos a nuestro restaurante </h1>
-        <p>
-          Disfruta de nuestro delicioso menú
-        </p>
-        <a href="menu.html" class="btn-cta">Ver menú</a>
-      </section>
-
-      <section class="about">
-        <h2>Sobre nosotros</h2>
-        <p>
-          Somos un restaurante campestre ubicado en un entorno natural y
-          tranquilo.
-        </p>
-        <a href="#" class="btn-cta">Conoce más</a>
-      </section>
-
-      <section class="menu">
-        <h2>Menú del día</h2>
-        <div class="menu-items">
-          <div class="menu-item">
-            <img src="plato1.jpg" alt="Plato 1" />
-            <h3>Nombre del plato 1</h3>
-            <p>Descripción del plato 1</p>
-            <p>Precio:</p>
-          </div>
-          <div class="menu-item">
-            <img src="plato2.jpg" alt="Plato 2" />
-            <h3>Nombre del plato 2</h3>
-            <p>Descripción del plato 2</p>
-            <p>Precio:</p>
-          </div>
-          <div class="menu-item">
-            <img src="plato3.jpg" alt="Plato 3" />
-            <h3>Nombre del plato 3</h3>
-            <p>Descripción del plato 3</p>
-            <p>Precio:</p>
-          </div>
-        </div>
-        <h2>Califica nuestro restaurante</h2>
-  <p>¿Cómo te pareció nuestra comida y servicio? ¡Danos tu opinión!</p>
-  <div class="rating">
-    <input type="radio" name="rating" value="5" id="5"><label for="5">★</label>
-    <input type="radio" name="rating" value="4" id="4"><label for="4">★</label>
-    <input type="radio" name="rating" value="3" id="3"><label for="3">★</label>
-    <input type="radio" name="rating" value="2" id="2"><label for="2">★</label>
-    <input type="radio" name="rating" value="1" id="1"><label for="1">★</label>
-  </div>
-  <p>¡Gracias por tu opinión!</p>
-        <a href="menu.html" class="btn-cta">Ver menú completo</a>
-      </section>
-    </main>
-
-    <footer>
-      <div class="redes-sociales">
-        <a href="#"><img src="facebook.png" alt="Facebook" /></a>
-        <a href="#"><img src="twitter.png" alt="Twitter" /></a>
-        <a href="#"><img src="instagram.png" alt="Instagram" /></a>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="menu.html">Menú</a></li>
+          <li><a href="reservas.html" id="reserva">Reservas</a></li>
+          <li><a href="sesion.html">Iniciar sesión</a></li>
+        </ul>
       </div>
-      <p>banderaunte &copy; 2023</p>
-    </footer>
-  </body>
-</html
+    </nav>
+  </header>
+
+  <main>
+    <div class="carrusel">
+      <div class="carousel">
+        <img class="slide" src="./assets/imagen_prueba.jpeg" alt="Slide 1">
+        <img class="slide" src="https://static.nationalgeographicla.com/files/styles/image_3200/public/nationalgeographic_2791022.jpg?w=1600&h=900&p=righttop" alt="Slide 2">
+        <img class="slide" src="https://www.fundacionaquae.org/wp-content/uploads/2018/10/proteger-a-los-animales.jpg" alt="Slide 3">
+      
+        <a class="prev" onclick="prevSlide()">&#10094;</a>
+        <a class="next" onclick="nextSlide()">&#10095;</a>
+
+        <div class="dots-container">
+          <span class="dot" onclick="goToSlide(0)"></span>
+          <span class="dot" onclick="goToSlide(1)"></span>
+          <span class="dot" onclick="goToSlide(2)"></span>
+        </div>
+      </div>      
+    </div>
+    <section class="hero">
+      <h1>Bienvenidos a nuestro restaurante </h1>
+      <p>
+        Disfruta de nuestro delicioso menú
+      </p>
+      <a href="menu.html" class="btn-cta">Ver menú</a>
+    </section>
+
+    <section class="about">
+      <h2>Sobre nosotros</h2>
+      <p>
+        Somos un restaurante campestre ubicado en un entorno natural y
+        tranquilo.
+      </p>
+      <a href="#" class="btn-cta">Conoce más</a>
+    </section>
+
+    <section class="menu">
+      <h2>Menú del día</h2>
+      <div class="menu-items">
+        <div class="menu-item">
+          <img src="plato1.jpg" alt="Plato 1" />
+          <h3>Nombre del plato 1</h3>
+          <p>Descripción del plato 1</p>
+          <p>Precio:</p>
+        </div>
+        <div class="menu-item">
+          <img src="plato2.jpg" alt="Plato 2" />
+          <h3>Nombre del plato 2</h3>
+          <p>Descripción del plato 2</p>
+          <p>Precio:</p>
+        </div>
+        <div class="menu-item">
+          <img src="plato3.jpg" alt="Plato 3" />
+          <h3>Nombre del plato 3</h3>
+          <p>Descripción del plato 3</p>
+          <p>Precio:</p>
+        </div>
+      </div>
+      <h2>Califica nuestro restaurante</h2>
+      <p>¿Cómo te pareció nuestra comida y servicio? ¡Danos tu opinión!</p>
+      <div class="rating">
+        <input type="radio" name="rating" value="5" id="5"><label for="5">★</label>
+        <input type="radio" name="rating" value="4" id="4"><label for="4">★</label>
+        <input type="radio" name="rating" value="3" id="3"><label for="3">★</label>
+        <input type="radio" name="rating" value="2" id="2"><label for="2">★</label>
+        <input type="radio" name="rating" value="1" id="1"><label for="1">★</label>
+      </div>
+      <p>¡Gracias por tu opinión!</p>
+      <a href="menu.html" class="btn-cta">Ver menú completo</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="redes-sociales">
+      <a href="#"><img src="facebook.png" alt="Facebook" /></a>
+      <a href="#"><img src="twitter.png" alt="Twitter" /></a>
+      <a href="#"><img src="instagram.png" alt="Instagram" /></a>
+    </div>
+    <p>banderaunte &copy; 2023</p>
+  </footer>
+</body>
+<script src="https://kit.fontawesome.com/ac032783fa.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.8/glider.min.js"></script>
+<script src="./script/carrusel.js"></script>
+</html>
