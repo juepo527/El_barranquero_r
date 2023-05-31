@@ -1,5 +1,7 @@
 /* Estilos generales */
 
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,7 +9,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Berkshire Swash', cursive;
   font-size: 16px;
   line-height: 1.5;
 }
@@ -28,6 +30,12 @@ header {
   padding: 20px;
 }
 
+.logo img{
+  width:100px;
+  height:100px;
+  border-radius: 50%;
+}
+
 nav ul {
   display: flex;
 }
@@ -42,13 +50,14 @@ nav ul li:last-child {
 
 nav ul li a {
   font-weight: bold;
+  font-size: larger;
 }
 
 nav .navbar {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  align-items: baseline;
+  align-items: center;
 }
 
 nav #reserva {
@@ -61,6 +70,10 @@ nav #reserva {
   background-color:#8b4a00;
   border-radius: 20px;
   color: white;
+}
+
+nav ul li .actual{
+  color: rgba(51, 51, 51, 0.8);
 }
 
 /* Estilos del héroe */
