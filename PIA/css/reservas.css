@@ -70,43 +70,6 @@ nav ul li .actual{
 
 /* Estilos del cuerpo de página */
 
-.reservas {
-  margin: 50px;
-}
-
-.reservas h2 {
-  margin-bottom: 20px;
-}
-
-.reservas label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.reservas input {
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  border: none;
-}
-
-.reservas input[type="submit"] {
-  background-color: #f7d996;
-  color: #333;
-  font-weight: bold;
-  border-radius: 5px;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.reservas input[type="submit"]:hover {
-  background-color: #333;
-  color: #fff;
-
-}
-
 
 /* Estilos del pie de página */
 
