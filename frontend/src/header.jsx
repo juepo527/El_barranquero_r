@@ -1,22 +1,22 @@
 import React from 'react';
-import "bootstrap/dist/css/bootstrap.min.css"
+//import "bootstrap/dist/css/bootstrap.min.css"
 import "./header.css"
 
 function Header() {
     return (
-        <div class="bg-primary-subtle container">
-            <nav class="navbar fixed-top bg-body-dark">
-                <div class="logo">
-                    <img src="/PIA/assets/logo.jpeg" alt="Logo" />
-                </div>
-                <ul class="lista">
-                    <li><a href="index.html" class="actual">Inicio</a></li>
-                    <li><a href="menu.html">Menú</a></li>
-                    <li><a href="reservas.html">Reservas</a></li>
-                    <li><a href="sesion.html">Admin</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <div className='logo'>
+                <a href='#'>
+                    <img src="assets/logo.jpeg"/>
+                </a>
+            </div>
+            <ul className='items'>
+                <li className='activo'><a href='#'>Inicio</a></li>
+                <li><a href='#'>Menú</a></li>
+                <li><a href='#'>Reserva</a></li>
+                <li><a href='#'>Inicio sesión</a></li>
+            </ul>
+        </nav>
     );
 }
 
