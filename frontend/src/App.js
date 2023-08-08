@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
-import Header from './header'
+import Header from './componentes/header'
 
 function App() {
   return (
