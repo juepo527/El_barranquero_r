@@ -1,5 +1,6 @@
-import React from 'react'
-import "./body_inicio.css"
+import React from 'react';
+import "./body_inicio.css";
+import { Link, Outlet } from 'react-router-dom';
 
 function Body_inicio() {
     return (
@@ -9,7 +10,8 @@ function Body_inicio() {
                 <p>
                     Disfruta de nuestro delicioso menú
                 </p>
-                <a href="menu.html" class="btn-cta">Ver menú</a>
+                <Link to={'/menu'} class="btn-cta">Ver menú</Link>
+                <Outlet/>
             </section>
 
             <section class="about">
@@ -53,7 +55,8 @@ function Body_inicio() {
                     <input type="radio" name="rating" value="5" id="5"/><label for="5">★</label>
                 </div>
                 <p>¡Gracias por tu opinión!</p>
-                <a href="menu.html" class="btn-cta">Ver menú completo</a>
+                <Link to={'/menu'} class="btn-cta">Ver menú</Link>
+                <Outlet/>
             </section>
         </div>
     )

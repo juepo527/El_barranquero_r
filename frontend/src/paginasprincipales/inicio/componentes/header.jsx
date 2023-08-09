@@ -1,21 +1,23 @@
 import React from 'react';
 //import "bootstrap/dist/css/bootstrap.min.css"
 import "./header.css"
+import { Link, Outlet } from 'react-router-dom';
 
 function Header() {
     return (
         <nav>
             <div className='logo'>
-                <a href='#'>
+                <Link to='/App'>
                     <img src="assets/logo.jpeg"/>
-                </a>
+                </Link>
             </div>
             <ul className='items'>
-                <li className='activo'><a href='#'>Inicio</a></li>
-                <li><a href='#'>Menú</a></li>
-                <li><a href='#'>Reserva</a></li>
-                <li><a href='#'>Inicio sesión</a></li>
+                <li className='activo'><Link to='/App'>Inicio</Link></li>
+                <li><Link to='/menu'>Menú</Link></li>
+                <li><Link to='/pedidos'>Reserva</Link></li>
+                <li><Link to='/iniciosesion'>Inicio sesión</Link></li>
             </ul>
+        <Outlet/>
         </nav>
     );
 }
