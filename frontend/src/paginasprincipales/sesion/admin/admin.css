@@ -1,0 +1,59 @@
+.general{
+    width:100vw;
+    height:90vh;
+    background-color: #e5b9735d;
+    display: wrap;
+    justify-content: space-around;
+}
+.izquierda{
+    background-color: black;
+    width: 27%;
+    height: 90vh;
+    position: absolute;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-around;
+}
+
+.derecha{
+    background-color: red;
+    width: 70%;
+    height: 90vh;
+    right: 10px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+}
+
+.izquierda .pedido{
+    background-color: aliceblue;
+    width: 90%;
+    height: 47%;
+}
+
+.izquierda .reserva{
+    background-color: aliceblue;
+    bottom: 30px;
+    width: 90%;
+    height: 47%;
+}
+
+.derecha .derecha_arriba{
+    background-color: blue;
+    width: 90%;
+    height: 40%;
+}
+
+.derecha .derecha_arriba .ingresos{
+    
+}
+
+.derecha .derecha_abajo{
+    background-color: greenyellow;
+    width: 90%;
+    height: 50% ;
+}

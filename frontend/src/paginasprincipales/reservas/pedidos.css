@@ -1,0 +1,28 @@
+.cuerpo {
+    background-color: #e5b9735d;
+    height: 89vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+}
+
+button{
+    width:34rem;
+    height: 80px;
+    margin: 50px;
+    border-radius: 50px;
+}
+
+.btn{
+    border-radius: 60px;
+    font-size:30px;
+}
+
+.btn:hover{
+    width:34rem;
+    height: 80px;
+    margin: 50px;
+    border-radius: 50px;
+    background-color: #238f35;
+}

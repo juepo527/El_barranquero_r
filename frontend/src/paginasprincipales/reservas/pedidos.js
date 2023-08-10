@@ -4,10 +4,10 @@ import { Link, Outlet } from 'react-router-dom';
 
 function Pedidos() {
   return (
-    <div>
-      <Link to={'/comprarecoge'}>Compre y recoje</Link>
-      <Link to={'/domicilio'}>Domicilio</Link>
-      <Link to={'/reserva'}>Reserva</Link>
+    <div class='cuerpo'>
+      <button type="button" class="btn btn-success"><Link to={'/comprarecoge'}>Compre y recoje</Link></button>
+      <button type="button" class="btn btn-success"><Link to={'/domicilio'}>Domicilio</Link></button>
+      <button type="button" class="btn btn-success"><Link to={'/reserva'}>Reserva</Link></button>
       <Outlet/>
     </div>
   )
