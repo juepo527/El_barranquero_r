@@ -1,9 +1,10 @@
 .general{
-    width:100vw;
-    height:90vh;
+    width:98.9vw;
+    height:100vh;
     background-color: #e5b9735d;
     display: wrap;
     justify-content: space-around;
+    padding: 10px;
 }
 .izquierda{
     background-color: black;
@@ -50,10 +51,46 @@
 
 .derecha .derecha_arriba .ingresos{
     background-color: aquamarine;
+    height: 40%;
+    width: 40%;
+    margin:10px;
+}
+
+.derecha .derecha_arriba .egresos{
+    background-color: aquamarine;
+    height: 40%;
+    width: 40%;
+    margin:10px;
+}
+
+.derecha .derecha_arriba .ganancias{
+    background-color: aquamarine;
+    height: 85%;
+    width: 50%;
+    margin:10px;
+    position: relative;
+    left: 380px;
+    top: -200px;
 }
 
 .derecha .derecha_abajo{
     background-color: greenyellow;
     width: 90%;
     height: 50% ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.derecha .derecha_abajo .mesas{
+    background-color: violet;
+    width: 45%;
+    height:90%;
+}
+
+.derecha .derecha_abajo .domicilios{
+    background-color: violet;
+    width: 45%;
+    height:90%;
 }

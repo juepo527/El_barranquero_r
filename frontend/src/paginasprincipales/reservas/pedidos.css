@@ -1,4 +1,4 @@
-.cuerpo {
+.cuerpo_pedidos {
     background-color: #e5b9735d;
     height: 89vh;
     display: flex;
@@ -7,19 +7,19 @@
     flex-direction:column;
 }
 
-button{
+.cuerpo_pedidos button{
     width:34rem;
     height: 80px;
     margin: 50px;
     border-radius: 50px;
 }
 
-.btn{
+.cuerpo_pedidos .btn{
     border-radius: 60px;
     font-size:30px;
 }
 
-.btn:hover{
+.cuerpo_pedidos .btn:hover{
     width:34rem;
     height: 80px;
     margin: 50px;

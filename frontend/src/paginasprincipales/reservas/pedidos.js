@@ -4,7 +4,7 @@ import { Link, Outlet } from 'react-router-dom';
 
 function Pedidos() {
   return (
-    <div class='cuerpo'>
+    <div class='cuerpo_pedidos'>
       <button type="button" class="btn btn-success"><Link to={'/comprarecoge'}>Compre y recoje</Link></button>
       <button type="button" class="btn btn-success"><Link to={'/domicilio'}>Domicilio</Link></button>
       <button type="button" class="btn btn-success"><Link to={'/reserva'}>Reserva</Link></button>
