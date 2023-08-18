@@ -4,14 +4,14 @@ import { Link, Outlet } from 'react-router-dom';
 
 function Body_inicio() {
     return (
-        <div>
+        <div class='p_inicio'>
             <section class="hero">
                 <h1>Bienvenidos a nuestro restaurante </h1>
                 <p>
                     Disfruta de nuestro delicioso menú
                 </p>
                 <Link to={'/menu'} class="btn-cta">Ver menú</Link>
-                <Outlet/>
+                <Outlet />
             </section>
 
             <section class="about">
@@ -25,24 +25,36 @@ function Body_inicio() {
 
             <section class="menu">
                 <h2>Menú del día</h2>
-                <div class="menu-items">
-                    <div class="menu-item">
-                        <img src="#" alt="Plato 1" />
-                        <h3>Nombre del plato 1</h3>
-                        <p>Descripción del plato 1</p>
-                        <p>Precio:</p>
+                <div class="card-group">
+                    <div class="card">
+                        <img src="..." class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
                     </div>
-                    <div class="menu-item">
-                        <img src="#" alt="Plato 2" />
-                        <h3>Nombre del plato 2</h3>
-                        <p>Descripción del plato 2</p>
-                        <p>Precio:</p>
+                    <div class="card">
+                        <img src="..." class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
                     </div>
-                    <div class="menu-item">
-                        <img src="#" alt="Plato 3" />
-                        <h3>Nombre del plato 3</h3>
-                        <p>Descripción del plato 3</p>
-                        <p>Precio:</p>
+                    <div class="card">
+                        <img src="..." class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
                     </div>
                 </div>
                 <h2>Califica nuestro restaurante</h2>
@@ -57,8 +69,8 @@ function Body_inicio() {
                 <p>¡Gracias por tu opinión!</p>
                 <Link to={'/menu'} class="btn-cta">Ver menú</Link>
                 <Outlet/>
-            </section>
-        </div>
+            </section >
+        </div >
     )
 }
 
