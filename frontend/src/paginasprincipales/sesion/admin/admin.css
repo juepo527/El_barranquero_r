@@ -1,12 +1,13 @@
-.general{
-    width:98.9vw;
-    height:100vh;
+.general {
+    width: 98.9vw;
+    height: 100vh;
     background-color: #e5b9735d;
     display: wrap;
     justify-content: space-around;
     padding: 10px;
 }
-.izquierda{
+
+.izquierda {
     background-color: black;
     width: 27%;
     height: 90vh;
@@ -14,11 +15,11 @@
     left: 10px;
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     justify-content: space-around;
 }
 
-.derecha{
+.derecha {
     background-color: red;
     width: 70%;
     height: 90vh;
@@ -27,70 +28,67 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items:center;
+    align-items: center;
 }
 
-.izquierda .pedido{
+.izquierda .pedido {
     background-color: aliceblue;
     width: 90%;
     height: 47%;
 }
 
-.izquierda .reserva{
+.izquierda .reserva {
     background-color: aliceblue;
     bottom: 30px;
     width: 90%;
     height: 47%;
 }
 
-.derecha .derecha_arriba{
+.derecha .derecha_arriba {
     background-color: blue;
     width: 90%;
     height: 40%;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+    padding: 5px;
 }
 
-.derecha .derecha_arriba .ingresos{
+.derecha .derecha_arriba .ingresos {
     background-color: aquamarine;
-    height: 40%;
-    width: 40%;
-    margin:10px;
 }
 
-.derecha .derecha_arriba .egresos{
+.derecha .derecha_arriba .egresos {
     background-color: aquamarine;
-    height: 40%;
-    width: 40%;
-    margin:10px;
+        height: 219%;
 }
 
-.derecha .derecha_arriba .ganancias{
+.derecha .derecha_arriba .ganancias {
     background-color: aquamarine;
-    height: 85%;
-    width: 50%;
-    margin:10px;
-    position: relative;
-    right: -540px;
-    top: -289px;
 }
 
-.derecha .derecha_abajo{
+.derecha .derecha_abajo {
     background-color: greenyellow;
     width: 90%;
-    height: 50% ;
+    height: 50%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
 
-.derecha .derecha_abajo .mesas{
+.derecha .derecha_abajo .mesas {
     background-color: violet;
     width: 45%;
-    height:90%;
+    height: 90%;
 }
 
-.derecha .derecha_abajo .domicilios{
+.derecha .derecha_abajo .domicilios {
     background-color: violet;
     width: 45%;
-    height:90%;
+    height: 90%;
 }
