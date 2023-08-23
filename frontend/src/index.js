@@ -12,6 +12,7 @@ import Compra_recoge from './paginasprincipales/reservas/comprarecoge/comprareco
 import Domicilio from './paginasprincipales/reservas/domicilio/domicilio';
 import Admin from './paginasprincipales/sesion/admin/admin';
 import Reserva from './paginasprincipales/reservas/reserva/reserva';
+import Edit_menu from './paginasprincipales/sesion/edit_menu/edit_menu';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -27,6 +28,7 @@ root.render(
             <Route path='reserva' element={<Reserva/>}/>
             <Route path='iniciosesion' element={<Iniciosesion/>}/>
             <Route path='admin' element={<Admin/>}/>
+            <Route path='editarMenu' element={<Edit_menu/>}/>
         </Routes>
     </BrowserRouter>
 );

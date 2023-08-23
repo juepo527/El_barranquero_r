@@ -1,18 +1,16 @@
-.general {
-    width: 98.9vw;
-    height: 100vh;
-    background-color: #e5b9735d;
-    display: wrap;
-    justify-content: space-around;
-    padding: 10px;
+.general_admin {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 2fr 100px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
 }
 
 .izquierda {
     background-color: black;
-    width: 27%;
     height: 90vh;
-    position: absolute;
-    left: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,10 +19,7 @@
 
 .derecha {
     background-color: red;
-    width: 70%;
     height: 90vh;
-    right: 10px;
-    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

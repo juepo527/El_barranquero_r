@@ -23,7 +23,7 @@ function Menu() {
           {
             Menu.map((val, key) =>{
               return <div key={val.id} className="card">
-              <img src="..." className="card-img-top" alt="..." />
+              <img src={val.imagen} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">{val.nombre}</h5>
                 <p className="card-text">{val.descripcion}</p>
