@@ -21,17 +21,17 @@ function Menu() {
       <div>
         <template className='cards'>
           {
-            Menu.map((val, key) =>{
+            Menu.map((val, key) => {
               return <div key={val.id} className="card">
-              <img src={val.imagen} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">{val.nombre}</h5>
-                <p className="card-text">{val.descripcion}</p>
+                <img src={val.imagen} className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title">{val.nombre}</h5>
+                  <p className="card-text">{val.descripcion}</p>
+                </div>
+                <div className="card-footer">
+                  <small className="text-body-secondary">{val.precio}</small>
+                </div>
               </div>
-              <div className="card-footer">
-                <small className="text-body-secondary">{val.precio}</small>
-              </div>
-            </div>
             })
           }
         </template>
