@@ -22,7 +22,7 @@ function Admin() {
           </div>
         </div>
       </div>
-      <button><Link to='/editarMenu'>Editar Menu</Link></button>
+      <Link to='/editarMenu'><button>Editar Menu</button></Link>
       <Outlet/>
     </div>
   )

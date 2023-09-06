@@ -26,3 +26,20 @@
     border-radius: 50px;
     background-color: #238f35;
 }
+
+.reserva{
+    width: 56%;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    grid-template-rows: 2fr 100px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    align-items: center;
+    align-items: start;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    background-color: rgb(255, 255, 255, 0.13);
+    backdrop-filter: blur(10px);
+}

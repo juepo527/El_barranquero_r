@@ -6,11 +6,6 @@ import { EffectCards } from 'swiper/modules';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
-import { ChakraProvider } from '@chakra-ui/react'
-
-
-   
-
 
 function Body_inicio() {
     return (
@@ -96,8 +91,6 @@ function Body_inicio() {
                         <SwiperSlide>Slide 5</SwiperSlide>
                         <SwiperSlide>Slide 6</SwiperSlide>
                         <SwiperSlide>Slide 7</SwiperSlide>
-                        <SwiperSlide>Slide 8</SwiperSlide>
-                        <SwiperSlide>Slide 9</SwiperSlide>
                     </Swiper>
                 </div>
                 <h2>Califica nuestro restaurante</h2>
@@ -110,6 +103,7 @@ function Body_inicio() {
                     <input type="radio" name="rating" value="5" id="5" /><label for="5">★</label>
                 </div>
                 <p>¡Gracias por tu opinión!</p>
+                {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0540772510226!2d-75.49534052370903!3d6.256606793731919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e44274acb3890a5%3A0x434afdee5a294ea7!2sEl%20Barranquero%20Restaurante!5e0!3m2!1ses!2sco!4v1693924910318!5m2!1ses!2sco"></iframe> */}
                 <Link to={'/menu'} className="btn-cta">Ver menú</Link>
                 <Outlet />
             </section >
