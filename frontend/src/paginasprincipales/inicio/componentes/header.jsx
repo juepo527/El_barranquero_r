@@ -8,7 +8,7 @@ function Header() {
         <nav>
             <div className='logo'>
                 <Link to='/App'>
-                    <img src="assets/logo.jpeg"/>
+                    <img src="https://res.cloudinary.com/dwjwb4mza/image/upload/v1694028701/WhatsApp_Image_2023-08-10_at_7.42.17_PM-removebg-preview_hkf4p6.png"/>
                 </Link>
             </div>
             <ul className='items'>
