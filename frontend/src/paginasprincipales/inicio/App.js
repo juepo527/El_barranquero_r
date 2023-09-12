@@ -13,7 +13,6 @@ import Body_inicio from './componentes/body_inicio';
 function App() {
   return (
     <div className="App">
-      
       <Body_inicio></Body_inicio>
     </div>
   );

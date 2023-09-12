@@ -10,6 +10,7 @@ import Pedidos from './paginasprincipales/reservas/pedidos';
 import Iniciosesion from './paginasprincipales/sesion/iniciosesion';
 import Admin from './paginasprincipales/sesion/admin/admin';
 import Edit_menu from './paginasprincipales/sesion/edit_menu/edit_menu';
+import Footer from './paginasprincipales/inicio/componentes/footer';
 import './index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

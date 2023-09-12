@@ -6,6 +6,8 @@
     grid-row-gap: 20px;
     justify-items: stretch;
     align-items: stretch;
+    padding: 50px;
+    font-size: 50px;
 }
 
 .izquierda {
@@ -15,6 +17,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    border-radius: 30px;
+    background-color: #e5b9735d;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 }
 
 .derecha {
@@ -24,23 +30,36 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    border-radius: 30px;
+    background-color: #e5b9735d;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 }
 
 .izquierda .pedido {
-    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background-color: #F2F2F2;
     width: 90%;
     height: 47%;
 }
 
-.izquierda .reserva {
-    background-color: aliceblue;
+.izquierda .reserva_contenedor {
+    background-color: #F2F2F2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
     bottom: 30px;
     width: 90%;
     height: 47%;
 }
 
 .derecha .derecha_arriba {
-    background-color: blue;
+    background-color: rgba(255, 78, 30, 0.308);
+    backdrop-filter: blur(10px);
     width: 90%;
     height: 40%;
     display: grid;
@@ -51,39 +70,63 @@
     justify-items: stretch;
     align-items: stretch;
     padding: 5px;
+    border-radius: 30px;
+    padding: 10px;
 }
 
 .derecha .derecha_arriba .ingresos {
-    background-color: aquamarine;
+    background-color: #F2F2F2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
 }
 
 .derecha .derecha_arriba .egresos {
-    background-color: aquamarine;
-        height: 219%;
+    background-color: #F2F2F2;
+    height: 212%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
 }
 
 .derecha .derecha_arriba .ganancias {
-    background-color: aquamarine;
+    background-color: #F2F2F2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
 }
 
 .derecha .derecha_abajo {
-    background-color: greenyellow;
+    background-color: rgba(255, 78, 30, 0.308);
+    backdrop-filter: blur(10px);
     width: 90%;
     height: 50%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    border-radius: 30px;
 }
 
 .derecha .derecha_abajo .mesas {
-    background-color: violet;
+    background-color: #F2F2F2;
     width: 45%;
     height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
 }
 
 .derecha .derecha_abajo .domicilios {
-    background-color: violet;
+    background-color: #F2F2F2;
     width: 45%;
     height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
 }

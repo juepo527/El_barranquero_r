@@ -1,0 +1,15 @@
+.editar_menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.editar_menu .formulario{
+    width: 50%;
+    margin: 80px;
+}
+
+.editar_menu img{
+    width: 150px;
+    height: 150px;
+}

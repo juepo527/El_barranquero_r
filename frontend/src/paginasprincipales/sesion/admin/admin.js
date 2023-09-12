@@ -7,18 +7,18 @@ function Admin() {
     <div>
       <div className='general_admin'>
         <div className='izquierda'>
-          <div className='pedido'></div>
-          <div className='reserva'></div>
+          <div className='pedido'>Pedidos</div>
+          <div className='reserva_contenedor'>Reservas</div>
         </div>
         <div className='derecha'>
           <div className='derecha_arriba'>
-            <div className='ingresos'></div>
-            <div className='egresos'></div>
-            <div className='ganancias'></div>
+            <div className='ingresos'>Ingresos</div>
+            <div className='egresos'>Egresos</div>
+            <div className='ganancias'>Ganancias</div>
           </div>
           <div className='derecha_abajo'>
-            <div className='mesas'></div>
-            <div className='domicilios'></div>
+            <div className='mesas'>Mesas</div>
+            <div className='domicilios'>Domicilios</div>
           </div>
         </div>
       </div>
