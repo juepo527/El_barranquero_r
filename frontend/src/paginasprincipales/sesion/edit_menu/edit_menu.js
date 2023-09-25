@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Axios from 'axios';
 import Swal from 'sweetalert2';
 import './edit_menu.css'

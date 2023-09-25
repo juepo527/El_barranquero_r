@@ -5,7 +5,8 @@ import { Link, Outlet } from 'react-router-dom';
 function Pedidos() {
   return (
     <div class='cuerpo_pedidos'>
-      <h1 className="titulo">Pedidos</h1>
+      <h1 className="titulo">Reserva</h1>
+      <br/>
       <form className='reserva'>
         <div className='personal'>
           <h3>Información personal</h3>
@@ -25,6 +26,7 @@ function Pedidos() {
           <label for="persona">Personas Invitadas</label><input type='number' name='persona'/>
         </div>
       </form>
+      <button type='submit'>Enivar</button>
     </div>
   )
 }

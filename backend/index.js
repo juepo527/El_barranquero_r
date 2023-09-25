@@ -84,7 +84,7 @@ app.put("/editarMenu/update", (req,res)=>{
 app.delete("/editarMenu/delete/:id", (req,res)=>{
     const id = req.params.id;
 
-    db.query(`SET FOREIGN_KEY_CHECKS=0; DELETE FROM menu WHERE id_plato=?; SET FOREIGN_KEY_CHECKS=1;`,[id],
+    db.query(`DELETE FROM menu WHERE id_plato=?;`,[id],
     (err,result) =>{
         if(err){
             console.log(err);

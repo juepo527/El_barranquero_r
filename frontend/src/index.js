@@ -26,5 +26,6 @@ root.render(
             <Route path='admin' element={<Admin/>}/>
             <Route path='editarMenu' element={<Edit_menu/>}/>
         </Routes>
+        <Footer></Footer>
     </BrowserRouter>
 );

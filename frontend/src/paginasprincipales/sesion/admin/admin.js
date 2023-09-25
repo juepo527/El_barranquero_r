@@ -13,8 +13,8 @@ function Admin() {
         <div className='derecha'>
           <div className='derecha_arriba'>
             <div className='ingresos'>Ingresos</div>
-            <div className='egresos'>Egresos</div>
-            <div className='ganancias'>Ganancias</div>
+            <div className='egresos'>Ganancias</div>
+            <div className='ganancias'>Egresos</div>
           </div>
           <div className='derecha_abajo'>
             <div className='mesas'>Mesas</div>

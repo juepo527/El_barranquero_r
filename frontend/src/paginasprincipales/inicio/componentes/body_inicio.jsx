@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./body_inicio.css";
 import { Link, Outlet } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -8,6 +8,9 @@ import 'swiper/css/pagination';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
 
 function Body_inicio() {
+
+    const [encuesta,setEncuesta] = useState(false)
+
     return (
         <div className='p_inicio'>
             <section className="hero">
@@ -72,13 +75,10 @@ function Body_inicio() {
                         modules={[EffectCards]}
                         className="mySwiper"
                     >
-                        <SwiperSlide>Slide 1</SwiperSlide>
-                        <SwiperSlide>Slide 2</SwiperSlide>
-                        <SwiperSlide>Slide 3</SwiperSlide>
-                        <SwiperSlide>Slide 4</SwiperSlide>
-                        <SwiperSlide>Slide 5</SwiperSlide>
-                        <SwiperSlide>Slide 6</SwiperSlide>
-                        <SwiperSlide>Slide 7</SwiperSlide>
+                        <SwiperSlide><img src='https://res.cloudinary.com/dwjwb4mza/image/upload/v1694466043/WhatsApp_Image_2023-09-11_at_3.41.59_PM_ho2fuy.jpg'></img></SwiperSlide>
+                        <SwiperSlide><img src='https://res.cloudinary.com/dwjwb4mza/image/upload/v1694466043/WhatsApp_Image_2023-09-11_at_3.42.00_PM_zfhnlc.jpg'></img></SwiperSlide>
+                        <SwiperSlide><img src='https://res.cloudinary.com/dwjwb4mza/image/upload/v1694466043/WhatsApp_Image_2023-09-11_at_3.42.00_PM_1_ifxceb.jpg'></img></SwiperSlide>
+                        <SwiperSlide><img src='https://res.cloudinary.com/dwjwb4mza/image/upload/v1694637204/WhatsApp_Image_2023-09-13_at_3.33.00_PM_vaaafd.jpg'></img></SwiperSlide>
                     </Swiper>
                 </div>
                 <h2>Califica nuestro restaurante</h2>
@@ -91,7 +91,13 @@ function Body_inicio() {
                     <input type="radio" name="rating" value="4" id="4" /><label for="4">★</label>
                     <input type="radio" name="rating" value="5" id="5" /><label for="5">★</label>
                 </div>
-                <form>
+                <p>Deseas hacer una encuesta de satisfacción?</p>
+                <button onClick={()=>{
+                    setEncuesta(true)
+                    console.log('hola')
+                }}>Da click aquí!!!</button>
+                {
+                    encuesta ? (<form className='satisfacción'>
                     <fieldset class="row mb-3">
                         <legend class="col-form-label col-sm-2 pt-0">¿Consideras que los tiempos de espera entre platos fueron
                             pertinentes?</legend>
@@ -345,9 +351,11 @@ function Body_inicio() {
                             <textarea type="text" class="form-control" id="inputPassword3"/>
                         </div>
                     </div>
-                </form>
+                    <button type='submit'>Enviar</button>
+                </form>) : (<div></div>)
+                }
+                <br/>
                 <h3>¡Gracias por tu opinión!</h3>
-                {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0540772510226!2d-75.49534052370903!3d6.256606793731919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e44274acb3890a5%3A0x434afdee5a294ea7!2sEl%20Barranquero%20Restaurante!5e0!3m2!1ses!2sco!4v1693924910318!5m2!1ses!2sco"></iframe> */}
                 <Outlet />
             </section >
         </div >

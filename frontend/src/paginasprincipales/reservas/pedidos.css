@@ -1,6 +1,6 @@
 .cuerpo_pedidos {
     background-color: #e5b9735d;
-    height: 89vh;
+    height: 150vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,4 +42,9 @@
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
     background-color: rgb(255, 255, 255, 0.13);
     backdrop-filter: blur(10px);
+}
+
+.cuerpo_pedidos button{
+    background-color: #238f35;
+    font-size: 40px;
 }

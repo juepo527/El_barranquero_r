@@ -142,15 +142,6 @@ body {
   padding: 0;
 }
 
-body {
-  background: #fff;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
-}
-
 #app {
   display: flex;
   justify-content: center;
@@ -216,22 +207,6 @@ body {
     border: none;
 }
 
-#app { height: 100% }
-html,
-body {
-  position: relative;
-  height: 100%;
-}
-
-body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
-}
-
 .mySwiperCarrusel {
   width: 100%;
   padding-top: 20px;
@@ -258,4 +233,8 @@ body {
   border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
   padding: 50px 35px;
+}
+
+form button{
+  background-color: #52c377;
 }

@@ -3,14 +3,20 @@ import React from 'react'
 import Axios from 'axios'
 import { useState } from 'react';
 import './menu.css'
-import { UserCard } from 'react-ui-cards';
-
-
+import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
 function Menu() {
-  
 
-  const [Menu, setMenu] = useState([])
+  const onAddProduct =()=>{
+    console.log('add')
+  }
+  const [precioT, setPrecioT] = useState(0)
+  const [productos, setProductos] = useState([])
+  const [menu, setMenu] = useState([])
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const getMenu = () => {
     Axios.get('http://localhost:3001/menu',).then((response) => {
@@ -21,97 +27,45 @@ function Menu() {
 
   return (
     <div className='general'>
+      <button onClick={handleShow} className='boton_carrito'>
+        <img className='carrito_icon' src='https://res.cloudinary.com/dwjwb4mza/image/upload/v1695064965/cart-shopping-solid_xqp7j5.svg'></img>
+      </button>
+
+      <h1>Lunes</h1>
+
+      <Offcanvas show={show} onHide={handleClose} placement={'end'}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          {()=>{if(productos.length == 0){
+            return <div key={productos[0]}><h2>No hay productos en el carrito.</h2></div>}
+            else{
+              return  <h2>{productos}</h2>
+          }}}
+        </Offcanvas.Body>
+      </Offcanvas>
       <div className='Cards'>
-        <div class="card-hover">
-          <div class="card-hover__content">
-            <h3 class="card-hover__title">
-              Make your <span>choice</span> right now!
-            </h3>
-            <p class="card-hover__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia quisquam doloremque nostrum laboriosam, blanditiis libero corporis nulla a aut?</p>
-            <a href="#" class="card-hover__link">
-              <span>Learn How</span>
-              <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </a>
+        {menu.map((val, key) => {
+          return <div key={val.id_plato}>
+            <div className="card-hover">
+              <div className="card-hover__content">
+                <h3 className="card-hover__title">
+                  {val.nombre}
+                </h3>
+                <p className="card-hover__text" alt={val.nombre}>{val.descripcion}</p>
+                <a href="#" className="card-hover__link">
+                  <span>{val.precio}$</span>
+                  <button className='boton_producto' onClick={()=>{
+                    onAddProduct()
+                  }}><img className='carrito_icon' src='https://res.cloudinary.com/dwjwb4mza/image/upload/v1695064965/cart-shopping-solid_xqp7j5.svg'></img></button>
+                </a>
+              </div>
+              <img src={val.imagen}></img>
+            </div>
           </div>
-          <div class="card-hover__extra">
-            <h4>Learn <span>now</span> and get <span>40%</span> discount!</h4>
-          </div>
-          <img src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=60" alt=""></img>
-        </div>
-        <div class="card-hover">
-          <div class="card-hover__content">
-            <h3 class="card-hover__title">
-              Make your <span>choice</span> right now!
-            </h3>
-            <p class="card-hover__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia quisquam doloremque nostrum laboriosam, blanditiis libero corporis nulla a aut?</p>
-            <a href="#" class="card-hover__link">
-              <span>Learn How</span>
-              <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </a>
-          </div>
-          <div class="card-hover__extra">
-            <h4>Learn <span>now</span> and get <span>40%</span> discount!</h4>
-          </div>
-          <img src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=60" alt=""></img>
-        </div>
-        <div class="card-hover">
-          <div class="card-hover__content">
-            <h3 class="card-hover__title">
-              Make your <span>choice</span> right now!
-            </h3>
-            <p class="card-hover__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia quisquam doloremque nostrum laboriosam, blanditiis libero corporis nulla a aut?</p>
-            <a href="#" class="card-hover__link">
-              <span>Learn How</span>
-              <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </a>
-          </div>
-          <div class="card-hover__extra">
-            <h4>Learn <span>now</span> and get <span>40%</span> discount!</h4>
-          </div>
-          <img src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=60" alt=""></img>
-        </div>
-        <div class="card-hover">
-          <div class="card-hover__content">
-            <h3 class="card-hover__title">
-              Make your <span>choice</span> right now!
-            </h3>
-            <p class="card-hover__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia quisquam doloremque nostrum laboriosam, blanditiis libero corporis nulla a aut?</p>
-            <a href="#" class="card-hover__link">
-              <span>Learn How</span>
-              <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </a>
-          </div>
-          <div class="card-hover__extra">
-            <h4>Learn <span>now</span> and get <span>40%</span> discount!</h4>
-          </div>
-          <img src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=60" alt=""></img>
-        </div>
-        <div class="card-hover">
-          <div class="card-hover__content">
-            <h3 class="card-hover__title">
-              Make your <span>choice</span> right now!
-            </h3>
-            <p class="card-hover__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia quisquam doloremque nostrum laboriosam, blanditiis libero corporis nulla a aut?</p>
-            <a href="#" class="card-hover__link">
-              <span>Learn How</span>
-              <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </a>
-          </div>
-          <div class="card-hover__extra">
-            <h4>Learn <span>now</span> and get <span>40%</span> discount!</h4>
-          </div>
-          <img src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=60" alt=""></img>
-        </div>
+        })
+        }
       </div>
     </div>
   )
