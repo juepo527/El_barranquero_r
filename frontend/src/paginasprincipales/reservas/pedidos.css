@@ -1,6 +1,7 @@
 .cuerpo_pedidos {
     background-color: #e5b9735d;
-    height: 150vh;
+    padding-top: 20px;
+    padding-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;

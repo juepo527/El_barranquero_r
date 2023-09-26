@@ -13,6 +13,18 @@
     padding: 20px;
 }
 
+.listaCarrito{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    align-items: start;
+    width: 250px;
+}
+
+.listaCarrito li{
+    width: 100%;
+}
+
 .carrito_icon{
     width: 40px;
 }

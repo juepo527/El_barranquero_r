@@ -226,7 +226,7 @@ body {
 }
 
 .menu form{
-  width: 50%;
+  width: 80%;
   background-color: rgb(255, 255, 255, 0.13);
   border-radius: 10px;
   backdrop-filter: blur(10px);
