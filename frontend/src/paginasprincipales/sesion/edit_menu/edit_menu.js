@@ -31,7 +31,6 @@ function Edit_menu() {
         )
         const file = await res.json();
         setImagen(file.secure_url)
-        console.log(file.secure_url)
         setLoading(false)
         const Toast = Swal.mixin({
             toast: true,

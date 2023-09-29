@@ -11,6 +11,7 @@ import Iniciosesion from './paginasprincipales/sesion/iniciosesion';
 import Admin from './paginasprincipales/sesion/admin/admin';
 import Edit_menu from './paginasprincipales/sesion/edit_menu/edit_menu';
 import Footer from './paginasprincipales/inicio/componentes/footer';
+import Datos_clientes from './paginasprincipales/menu/datos_clientes'
 import './index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -21,6 +22,7 @@ root.render(
             <Route path='/' element={<App/>}/>
             <Route path='App' element={<App/>}/>
             <Route path='menu' element={<Menu/>}/>
+            <Route path='datosCliente' element={<Datos_clientes/>}/>
             <Route path='pedidos' element={<Pedidos/>}/>
             <Route path='iniciosesion' element={<Iniciosesion/>}/>
             <Route path='admin' element={<Admin/>}/>

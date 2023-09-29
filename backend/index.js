@@ -95,7 +95,12 @@ app.delete("/editarMenu/delete/:id", (req,res)=>{
     )
 });
 
-app.listen(3001, () => {
+//PÁGINA DE COMPRA
 
+app.post("/datosCliente", (req,res)=>{
+    const nombre = req.body.nombre
+})
+
+app.listen(3001, () => {
     console.log("Server is running on port 3001")
 })

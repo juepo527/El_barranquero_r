@@ -3,8 +3,9 @@ import React from 'react'
 import Axios from 'axios'
 import { useState } from 'react';
 import './menu.css'
-import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { Link } from 'react-router-dom'
+import Swal from 'sweetalert2';
 
 function Menu() {
 
@@ -12,12 +13,33 @@ function Menu() {
   const [productos, setProductos] = useState([])
   const [menu, setMenu] = useState([])
   const [show, setShow] = useState(false);
+  const [activo, setActivo] = useState(false)
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const onAddProduct = (val) => {
     productos.push(val)
-    console.log(productos)
+    setActivo(false)
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    Toast.fire({
+      icon: 'success',
+      title: 'Se ha agregado el producto'
+    })
+  }
+
+  const vaciarCarrito = () => {
+    setProductos([])
+    setActivo(false)
   }
 
   const getMenu = () => {
@@ -27,13 +49,17 @@ function Menu() {
   }
 
   const calculateTotalPrice = () => {
-      const sum = productos.reduce((accumulator, product) => accumulator + product.precio, 0);
-      setPrecioT(sum);
+    const sum = productos.reduce((accumulator, product) => accumulator + product.precio, 0);
+    setPrecioT(sum);
+    localStorage.setItem('cart', JSON.stringify(productos));
+    localStorage.setItem('total', JSON.stringify(sum));
+    setActivo(true)
   }
 
-  const eliminarProducto = (val) =>{
-    let index=productos.indexOf(val);
-    productos.splice(index,1)
+  const eliminarProducto = (val) => {
+    let index = productos.indexOf(val);
+    productos.splice(index, 1)
+    setActivo(false)
   }
 
   getMenu();
@@ -53,15 +79,24 @@ function Menu() {
         <Offcanvas.Body>
           <div>
             <ul className='listaCarrito'>
-              {productos.map((producto) => (
-                <li key={producto.id_plato}>
-                  {producto.nombre} ${producto.precio}
-                  <button className="btn btn-danger" onClick={()=>{eliminarProducto(producto)}}>Eliminar producto</button>
-                </li>
-              ))}
+              {productos.length == 0 ?
+                <h2 style={{ color: 'red' }}>No hay elementos en el carrito</h2>
+                : productos.map((producto) => (
+                  <li key={producto.id_plato}>
+                    {producto.nombre} ${producto.precio}
+                    <button className="btn btn-danger" onClick={() => { eliminarProducto(producto) }}>Eliminar producto</button>
+                    <hr />
+                  </li>
+                ))}
             </ul>
-            <button onClick={calculateTotalPrice}>Calcular Total</button>
-            <p>Total: ${precioT}</p>
+            <button className='btn btn-danger' onClick={() => {
+              vaciarCarrito()
+            }}>Vaciar carrito</button>
+            <button onClick={calculateTotalPrice}>Calcular precio</button>
+            <h4>Total: ${precioT}</h4>
+            {activo ?
+              <Link to='/datosCliente'><button className='btn btn-success'>Comprar</button></Link>
+              :<button className='btn btn-secondary' disabled>Comprar</button>}
           </div>
         </Offcanvas.Body>
       </Offcanvas>
