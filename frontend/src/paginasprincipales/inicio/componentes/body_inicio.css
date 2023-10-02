@@ -1,11 +1,7 @@
 .menu {
-    background-color: #e5b9735d;
+    background-color: #dd9e3b5d;
     padding: 100px;
     text-align: center;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 
 .menu h2 {
@@ -134,7 +130,16 @@ body {
 }
 
 body {
-  background: #eee;
+
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #000;
@@ -160,15 +165,15 @@ body {
   border-radius: 18px;
   font-size: 22px;
   font-weight: bold;
-  color: #fff;
+ 
 }
 
 .swiper-slide:nth-child(1n) {
-  background-color: rgb(206, 17, 17);
+  background-image: "https://imgs.search.brave.com/B7s_tXyUvoKTFDAfO0-Ln-rluWMD5v-baJ7AsGjut9Q/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzk2LzVl/LzcwLzk2NWU3MDE2/OTNjODI0MWM4ZTc5/YTllMzhlN2IxNzc1/LmpwZw";
 }
 
 .swiper-slide:nth-child(2n) {
-  background-color: rgb(0, 140, 255);
+  background-color: rgba(0, 140, 255, 0);
 }
 
 .swiper-slide:nth-child(3n) {
@@ -203,8 +208,24 @@ body {
   background-color: rgb(54, 94, 77);
 }
 .card{
-    background-color: #e9cda5;
-    border: none;
+background: #dd9e3b5d;
+    border: solid;
+}
+
+#app { height: 100% }
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #ff0000;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
 }
 
 .mySwiperCarrusel {
@@ -223,18 +244,4 @@ body {
 .swiper-slide img {
   display: block;
   width: 100%;
-}
-
-.menu form{
-  width: 80%;
-  background-color: rgb(255, 255, 255, 0.13);
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-  padding: 50px 35px;
-}
-
-form button{
-  background-color: #52c377;
 }

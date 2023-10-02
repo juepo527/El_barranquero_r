@@ -26,7 +26,7 @@ function Pedidos() {
           <label for="persona">Personas Invitadas</label><input type='number' name='persona'/>
         </div>
       </form>
-      <button type='submit'>Enivar</button>
+      <button type='submit'>Enviar</button>
     </div>
   )
 }
