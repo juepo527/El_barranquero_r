@@ -15,7 +15,7 @@ const Footer = () => {
                   <a
                     href="https://www.google.com/maps/place/El+Barranquero+Restaurante/@6.2566121,-75.4953405,1142m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8e44274acb3890a5:0x434afdee5a294ea7!8m2!3d6.2566068!4d-75.4927656!16s%2Fg%2F11lglnhy9d?hl=es&entry=ttu"
                     target="_blank"
-                    className="list-group-item list-group-item-action list-group-item-secondary flex-fill border-0 rounded-0 pt-0 bg-change slide-in-blurred-bottom"
+                    className="list-group-item list-group-item-action list-group-item-secondary flex-fill border-1-solid-black rounded-0 pt-0 bg-change slide-in-blurred-bottom"
                     aria-current="true"
                   >
                     <div className="mt-0 d-block">
@@ -27,6 +27,7 @@ const Footer = () => {
                         xmlns="http://www.w3.org/2000/svg"
                         style={{ width: '125px', height: '125px' }}
                       >
+                        <div className="mapa">
                         <path
                           className="stroke1 fill1"
                           d="M75.5316 69L93.865 91H56H55.6972L55.4453 91.1679L50 94.7982L44.5547 91.1679L44.3028 91H44H6.13504L24.4684 69H75.5316Z"
@@ -53,6 +54,7 @@ const Footer = () => {
                             strokeWidth="2px"
                           ></circle>
                         </g>
+                        </div>
                       </svg>
                     </div>
                     <h5 className="mb-0">Guía</h5>

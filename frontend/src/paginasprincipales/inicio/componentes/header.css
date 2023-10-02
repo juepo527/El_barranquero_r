@@ -7,8 +7,8 @@
 }
 
 nav{
-    background: rgb(53,200,184);
-    background: linear-gradient(90deg, rgba(53,200,184,1) 8%, rgba(68,227,99,0.8435749299719888) 31%, rgba(67,226,103,1) 73%, rgba(53,200,184,1) 97%);
+    background: rgb(248,174,54);
+    background: linear-gradient(148deg, rgba(248,174,54,1) 4%, rgba(248,112,54,1) 50%, rgba(255,128,33,0.865983893557423) 78%, rgba(248,173,54,0.969625350140056) 98%);
     display: flex;
     justify-content: space-between;
     padding: 10px;
