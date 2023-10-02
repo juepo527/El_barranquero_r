@@ -12,7 +12,7 @@ function Menu() {
   let [precioT, setPrecioT] = useState(0)
   const [productos, setProductos] = useState([])
   const [menu, setMenu] = useState([])
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false); 
   const [activo, setActivo] = useState(false)
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -66,9 +66,11 @@ function Menu() {
 
   return (
     <div className='general'>
+      <div className='contenedorUnicamenteCreadoParaIma'>
       <button onClick={handleShow} className='boton_carrito'>
         <img className='carrito_icon' src='https://res.cloudinary.com/dwjwb4mza/image/upload/v1695064965/cart-shopping-solid_xqp7j5.svg'></img>
       </button>
+      </div>
 
       <h1>Lunes</h1>
 

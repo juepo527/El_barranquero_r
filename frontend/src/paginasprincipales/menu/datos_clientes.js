@@ -8,15 +8,30 @@ import { Link } from 'react-router-dom'
 const Datos_clientes = () => {
     const cartData = JSON.parse(localStorage.getItem('cart'));
     const total = JSON.parse(localStorage.getItem('total'))
-    const [metodo, setMetodo] = useState('')
+    const [metodo, setMetodo] = useState('domicilio')
     const [nombre, setNombre] = useState('')
     const [direccion, setDireccion] = useState('')
     const [telefono, setTelefono] = useState()
-    const [correo, setCorreo] = useState('')
+    const [correo_electronico, setCorreo_electronico] = useState('')
     const [id_platos, setIdPlatos] = useState([])
 
     const subirDatos = () =>{
-
+        Axios.post("http://localhost:3001/datosCliente/create",{
+            nombre:nombre,
+            direccion:direccion,
+            telefono:telefono,
+            correo_electronico:correo_electronico,
+            metodo:metodo,
+            carData:cartData,
+            total:total
+        }).then(()=>{
+            Swal.fire({
+                title: '<strong>Compra exitosa</strong>',
+                html: 'El pedido se ha enviado con éxtio',
+                icon: 'success',
+                timer:3000
+            })
+        })
     }
 
     return (
@@ -26,31 +41,34 @@ const Datos_clientes = () => {
                 <div className='datos_cliente'>
                     <div className='personal'>
                         <h3>Información personal</h3>
-                        <label for="nombre">Nombre del cliente: </label><input type="text" 
+                        <label htmlFor="nombre">Nombre del cliente: </label><input type="text" 
                         onChange={(event)=>{
                             setNombre(event.target.value)
                         }}
                         name="nombre" placeholder='Juanito Perez' required/>
                         <br />
-                        <label for="dirección">Dirección</label><input type='text' 
+                        <label htmlFor="dirección">Dirección</label><input type='text' 
                         onChange={(event)=>{
                             setDireccion(event.target.value)
                         }}
                         name='direccion' placeholder='El Rosario' required/>
                         <br />
-                        <label for="telefono">Telefono:</label><input type='number' 
+                        <label htmlFor="telefono">Telefono:</label><input type='number' 
                         onChange={(event)=>{
                             setTelefono(event.target.value)
                         }}
                         name='telefono' placeholder='111-333-555' required/>
                         <br />
-                        <label for="correo">Correo:</label><input type='email' 
+                        <label htmlFor="correo_electronico">Correo electronico:</label><input type='text' 
                         onChange={(event)=>{
-                            setCorreo(event.target.value)
+                            setCorreo_electronico(event.target.value)
                         }}
-                        name='correo' placeholder='ejemplo@gmail.com' required/>
+                        name='correo_electronico' placeholder='ejemplo@gmail.com' required/>
                         <br />
-                        <label for='metodo'>Método de pedido</label><br/><select>
+                        <label htmlFor='metodo'>Método de pedido</label><br/><select
+                        onChange={(event)=>{
+                            setMetodo(event.target.value)
+                        }} id="select_metodo">
                             <option value='domicilio'>Domicilio</option>
                             <option value='recoge'>Compra y recoge</option>
                         </select>
@@ -68,9 +86,16 @@ const Datos_clientes = () => {
                     })}</div>
                     <h2>Total: ${total}</h2>
                 </div>
+                {console.log(id_platos)}
             </form >
             <div className='botones_compra'>
-                <button className='btn btn-success'>Hacer pedido</button>
+                {
+                    (nombre !== '' & direccion !== '' & telefono !== '' & correo_electronico!=='')?
+                    <button className='btn btn-success' onClick={()=>{
+                        subirDatos()
+                    }}>Hacer pedido</button>
+                    :<button className='btn btn-secondary'disabled>Hacer pedido</button>
+                }
                 <Link to="/app"><button className='btn btn-danger'>Cancelar</button></Link>
             </div>
         </div >
