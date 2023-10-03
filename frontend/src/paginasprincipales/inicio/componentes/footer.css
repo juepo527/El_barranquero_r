@@ -45,3 +45,30 @@ footer .derechos img{
     width: 100px;
     height: 100px;
 }
+
+@media screen and (max-width: 768px) {
+    footer {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-column-gap: 0;
+        grid-row-gap: 20px;
+    }
+
+    footer .redes h3 {
+        width: auto;
+        margin: 10px;
+    }
+
+    footer .redes a {
+        margin: 10px;
+    }
+    
+    footer .derechos {
+        margin-left: 0;
+    }
+
+    footer .derechos img {
+        width: 80px;
+        height: 80px;
+    }
+}

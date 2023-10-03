@@ -130,3 +130,44 @@
     align-items: center;
     border-radius: 30px;
 }
+
+/*Responsive raro */
+@media screen and (max-width: 768px) {
+    .general_admin {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 0;
+        grid-row-gap: 20px;
+        padding: 20px;
+        font-size: 36px;
+    }
+
+    .izquierda,
+    .derecha {
+        height: auto;
+        padding: 20px;
+    }
+
+    .izquierda .pedido,
+    .izquierda .reserva_contenedor,
+    .derecha .derecha_arriba,
+    .derecha .derecha_abajo {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .derecha .derecha_arriba {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .derecha .derecha_abajo {
+        flex-direction: column;
+    }
+
+    .derecha .derecha_abajo .mesas,
+    .derecha .derecha_abajo .domicilios {
+        width: 100%;
+    }
+}

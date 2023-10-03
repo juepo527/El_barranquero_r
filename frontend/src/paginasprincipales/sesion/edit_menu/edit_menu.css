@@ -13,3 +13,19 @@
     width: 150px;
     height: 150px;
 }
+/*Responsive*/
+@media screen and (max-width: 768px) {
+    .editar_menu {
+        align-items: center;
+    }
+
+    .editar_menu .formulario {
+        width: 90%;
+        margin: 20px;
+    }
+
+    .editar_menu img {
+        width: 100px;
+        height: 100px;
+    }
+}

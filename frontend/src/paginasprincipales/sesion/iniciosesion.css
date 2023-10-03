@@ -51,3 +51,29 @@ p {
     text-align: center;
     margin-top: 10px;
 }
+/*Responsive*/
+@media screen and (max-width: 768px) {
+    .inicio-sesion {
+        padding: 20px;
+    }
+
+    .forminicio {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 8px;
+    }
+
+    button {
+        width: 100%;
+        padding: 8px;
+        font-size: 18px; 
+    }
+
+    p {
+        margin-top: 20px;
+    }
+}

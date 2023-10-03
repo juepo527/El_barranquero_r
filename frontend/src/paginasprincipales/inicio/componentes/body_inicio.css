@@ -1,5 +1,13 @@
 .menu {
-    background-color: #dd9e3b5d;
+  background: rgba(233, 206, 32, 0.171);
+
+  background: linear-gradient(90deg, rgba(233, 206, 32, 0.288) 0%, rgba(230, 4, 0, 0.226) 97%);
+  
+  background: -moz-linear-gradient(90deg, rgba(233, 206, 32, 0.24) 0%, rgba(230, 4, 0, 0.192) 97%);
+  
+  background: -webkit-linear-gradient(90deg, rgba(233, 206, 32, 0.233) 0%, rgba(230, 4, 0, 0.158) 97%);
+  
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#e9d022", endColorstr="#E60400", GradientType=1 );
     padding: 100px;
     text-align: center;
 }
@@ -199,8 +207,9 @@ body {
   background-color: rgb(54, 94, 77);
 }
 .card{
-background: #dd9e3b5d;
-    border: solid;
+background: #dd9f3b00;
+border: none;
+    
 }
 
 .mySwiperCarrusel {
@@ -219,4 +228,41 @@ background: #dd9e3b5d;
 .swiper-slide img {
   display: block;
   width: 100%;
+}
+.satisfacción{
+  background-color: rgb(255, 255, 255, 0.13);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+}
+/*Responsive*/
+@media screen and (max-width: 768px) {
+  .menu {
+      padding: 50px;
+  }
+
+  .menu h2 {
+      font-size: 28px;
+  }
+
+  .menu-item {
+      margin-right: 20px;
+      margin-bottom: 20px;
+      width: 100%;
+  }
+
+  .hero {
+      padding: 50px;
+  }
+
+  .hero h1 {
+      font-size: 36px;
+  }
+
+  .hero p {
+      font-size: 16px;
+      margin-bottom: 20px;
+      padding-top: 20px;
+  }
 }
