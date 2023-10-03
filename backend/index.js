@@ -98,15 +98,13 @@ app.post("/editarMenu/create", (req,res)=>{
 //PÁGINA DE COMPRA
 
 app.post("/datosCliente/create", (req,res)=>{
+    const cedula = req.body.cedula
     const nombre = req.body.nombre
     const direccion = req.body.direccion
     const telefono = req.body.telefono
     const correo_electronico = req.body.correo_electronico
-    const metodo = req.body.metodo
-    const cartData = req.body.cartData
-    const total = req.body.total
 
-    db.query('INSERT INTO cliente(nombre,direccion,telefono,correo_electronico) VALUES (?,?,?,?)',[nombre,direccion,telefono,correo_electronico],
+    db.query('INSERT INTO cliente(cedula,nombre,direccion,telefono,correo_electronico) VALUES (?,?,?,?,?)',[cedula,nombre,direccion,telefono,correo_electronico],
     (err,result)=>{
         if(err){
             console.log(err);
@@ -114,16 +112,23 @@ app.post("/datosCliente/create", (req,res)=>{
             res.send(result)
         }
     })
+})
 
-    // db.query('INSERT INTO pedido(id_platos,total,metodo) VALUES (?,?,?)',[cartData,total,metodo],
-    // (err,result) =>{
-    //     if(err){
-    //         console.log(err);
-    //     } else {
-    //         res.send(result);
-    //     }
-    // }
-    // )
+app.post("/datosCliente/createPedido",(req,res)=>{
+    const cedula = req.body.cedula
+    const metodo = req.body.metodo
+    const lista_platos = req.body.lista_platos
+    const total = req.body.total
+
+    db.query('INSERT INTO pedido(id_platos,cedula_cliente,metodo,total) VALUES (?,?,?,?)',[lista_platos,cedula,metodo,total],
+    (err,result) =>{
+        if(err){
+            console.log(err);
+        } else {
+            res.send(result);
+        }
+    }
+    )
 })
 
 app.listen(3001, () => {
