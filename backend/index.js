@@ -150,6 +150,23 @@ app.post("/datosCliente/createPedido", (req, res) => {
     )
 })
 
+app.post("/pedidos/createReserva",(req,res)=>{
+    const cedula = parseInt(req.body.cedula)
+    const fecha = req.body.fecha
+    const hora = req.body.hora
+    const personas = req.body.personas
+
+    db.query('INSERT INTO reservas(cedula_cliente,fecha,hora,num_personas) VALUES (?,?,?,?)',[cedula,fecha,hora,personas],
+    (err,result)=>{
+        if(err){
+            console.log(err)
+        } else {
+            res.send(result)
+            console.log('reserva guardada')
+        }
+    })
+})
+
 app.listen(3001, () => {
     console.log("Server is running on port 3001")
 })

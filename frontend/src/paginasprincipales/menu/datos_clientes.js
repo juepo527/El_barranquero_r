@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './datos_clientes.css'
 import Swal from 'sweetalert2';
 import Axios from 'axios';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const Datos_clientes = () => {
     const cartData = JSON.parse(localStorage.getItem('cart'));

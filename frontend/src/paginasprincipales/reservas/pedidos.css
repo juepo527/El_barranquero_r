@@ -8,26 +8,6 @@
     flex-direction:column;
 }
 
-.cuerpo_pedidos button{
-    width:34rem;
-    height: 80px;
-    margin: 50px;
-    border-radius: 50px;
-}
-
-.cuerpo_pedidos .btn{
-    border-radius: 60px;
-    font-size:30px;
-}
-
-.cuerpo_pedidos .btn:hover{
-    width:34rem;
-    height: 80px;
-    margin: 50px;
-    border-radius: 50px;
-    background-color: #238f35;
-}
-
 .reserva{
     width: 56%;
     padding: 30px;
@@ -43,11 +23,6 @@
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
     background-color: rgb(255, 255, 255, 0.13);
     backdrop-filter: blur(10px);
-}
-
-.cuerpo_pedidos button{
-    background-color: #238f35;
-    font-size: 40px;
 }
 /*Responsive*/
 @media screen and (max-width: 768px) {
@@ -75,4 +50,14 @@
     .cuerpo_pedidos button {
         font-size: 30px; 
     }
+}
+
+.botones_compra{
+    width:fit-content;
+    padding: 7px;
+}
+
+.botones_compra button{
+    font-size: 20px;
+    padding: 7px;
 }
