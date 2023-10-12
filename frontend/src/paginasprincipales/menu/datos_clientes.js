@@ -47,7 +47,11 @@ const Datos_clientes = () => {
                 title: '<strong>Pedido exitoso</strong>',
                 html: 'El pedido se ha enviado con éxtio',
                 icon: 'success',
-                timer: 3000
+                confirmButtonText: 'Ok',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire('Saved!', '', 'success')
+                }
             })
         })
     }
@@ -121,13 +125,13 @@ const Datos_clientes = () => {
                         : <button className='btn btn-secondary' disabled>Subir datos</button>
                 }
                 {
-                    activo?
-                    <button className='btn btn-success' onClick={()=>{
-                        subirDatosPedido()
-                    }}>Hacer pedido</button>
-                    : <button className='btn btn-secondary' disabled>Hacer pedido</button>
+                    activo ?
+                        <button className='btn btn-success' onClick={() => {
+                            subirDatosPedido()
+                        }}>Hacer pedido</button>
+                        : <button className='btn btn-secondary' disabled>Hacer pedido</button>
                 }
-                <Link to="/app"><button className='btn btn-danger'>Cancelar</button></Link>
+                <Link to="/app"><button className='btn btn-primary'>Volver al inicio</button></Link>
             </div>
         </div >
     )
