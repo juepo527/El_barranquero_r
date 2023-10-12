@@ -16,6 +16,7 @@ const Datos_clientes = () => {
     const [correo_electronico, setCorreo_electronico] = useState('')
     const [id_platos, setIdPlatos] = useState([])
     const [lista_platos, setLista] = useState('')
+    const [activo, setActivo] = useState(false)
 
     const subirDatosCliente = () => {
         Axios.post("http://localhost:3001/datosCliente/createCliente", {
@@ -24,22 +25,26 @@ const Datos_clientes = () => {
             direccion: direccion,
             telefono: telefono,
             correo_electronico: correo_electronico
-        })
-        let lista_prov = id_platos.join(", ")
-        setLista(lista_prov)
-        console.log(lista_platos)
+        }).then(
+            Swal.fire(
+                {
+                    title: '<strong>Datos enviados</strong>',
+                    html: 'Los datos se han enviado con éxtio',
+                    icon: 'success',
+                    timer: 3000
+                }
+            )
+        )
     }
 
     const subirDatosPedido = () => {
-        console.log(lista_platos)
         Axios.post("http://localhost:3001/datosCliente/createPedido", {
             cedula: cedula,
             metodo: metodo,
-            lista_platos: lista_platos,
             total: total
         }).then(() => {
             Swal.fire({
-                title: '<strong>Compra exitosa</strong>',
+                title: '<strong>Pedido exitoso</strong>',
                 html: 'El pedido se ha enviado con éxtio',
                 icon: 'success',
                 timer: 3000
@@ -111,9 +116,16 @@ const Datos_clientes = () => {
                     (nombre !== '' & direccion !== '' & cedula !== '' & telefono !== '' & correo_electronico !== '') ?
                         <button className='btn btn-success' onClick={() => {
                             subirDatosCliente()
-                            setTimeout(subirDatosPedido(), 2000)
-                        }}>Hacer pedido</button>
-                        : <button className='btn btn-secondary' disabled>Hacer pedido</button>
+                            setActivo(true)
+                        }}>Subir datos</button>
+                        : <button className='btn btn-secondary' disabled>Subir datos</button>
+                }
+                {
+                    activo?
+                    <button className='btn btn-success' onClick={()=>{
+                        subirDatosPedido()
+                    }}>Hacer pedido</button>
+                    : <button className='btn btn-secondary' disabled>Hacer pedido</button>
                 }
                 <Link to="/app"><button className='btn btn-danger'>Cancelar</button></Link>
             </div>
