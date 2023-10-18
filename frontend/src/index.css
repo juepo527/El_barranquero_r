@@ -1,6 +1,8 @@
 body {
-  background-image: url('https://res.cloudinary.com/dwjwb4mza/image/upload/v1693922565/el_barranquero/WhatsApp_Image_2023-09-05_at_8.59.13_AM_hjzps4.jpg');
+  background-image: url('https://res.cloudinary.com/drvg6pa3z/image/upload/v1697661762/fondo_proyecto_qx08kr.png') ;
   background-size: cover;
+  height: 100%;
+    width: 100%;
   background-color: #e5b9735d;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

@@ -42,14 +42,14 @@ a{
 }
 
 li a:hover{
-    color: #EE5722;
+    color: #ffffff;
 }
 
 li a:hover::after{
     content:"";
     width: 30%;
     height: 2px;
-    background-color: #EE5722;
+    background-color: #ffffff;
     position: absolute;
     bottom:-4px;
     left: 20px;

@@ -18,6 +18,7 @@ const Footer = () => {
                     className="list-group-item list-group-item-action list-group-item-secondary flex-fill border-1-solid-black rounded-0 pt-0 bg-change slide-in-blurred-bottom"
                     aria-current="true"
                   >
+                    
                     <div className="mt-0 d-block">
                       <svg
                         width="100"
