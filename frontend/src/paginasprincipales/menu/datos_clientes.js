@@ -14,7 +14,7 @@ const Datos_clientes = () => {
     const [direccion, setDireccion] = useState('')
     const [telefono, setTelefono] = useState()
     const [correo_electronico, setCorreo_electronico] = useState('')
-    const [id_platos, setIdPlatos] = useState([])
+    const [str_platos, setStrPlatos] = useState([])
     const [lista_platos, setLista] = useState('')
     const [activo, setActivo] = useState(false)
 
@@ -38,20 +38,23 @@ const Datos_clientes = () => {
     }
 
     const subirDatosPedido = () => {
+        let listaProv = []
+        cartData.map((producto)=>{
+            listaProv.push(producto.nombre)
+        })
+        const lista = listaProv.join(' ')
+        console.log(lista)
         Axios.post("http://localhost:3001/datosCliente/createPedido", {
             cedula: cedula,
             metodo: metodo,
-            total: total
+            total: total,
+            lista: lista
         }).then(() => {
             Swal.fire({
                 title: '<strong>Pedido exitoso</strong>',
                 html: 'El pedido se ha enviado con éxtio',
                 icon: 'success',
                 confirmButtonText: 'Ok',
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire('Saved!', '', 'success')
-                }
             })
         })
     }
@@ -104,14 +107,16 @@ const Datos_clientes = () => {
                 </div>
                 <div className='descripcion_compra'>
                     <h2>Detalles de la compra</h2>
-                    <div>{cartData.map((producto) => {
-                        id_platos.push(producto.id_plato)
-                        return <div key={producto.id_plato}>
-                            <h3>{producto.nombre}</h3>
-                            <h3>{producto.precio}</h3>
-                            <hr />
-                        </div>
-                    })}</div>
+                    <div>{
+                        cartData.map((producto) => {
+                            return <div>
+                                <h3>{producto.nombre}</h3>
+                                <h3>{producto.precio}</h3>
+                                <hr />
+                            </div>
+                        }
+                        )
+                    }</div>
                     <h2>Total: ${total}</h2>
                 </div>
             </form >

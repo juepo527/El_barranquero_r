@@ -137,8 +137,9 @@ app.post("/datosCliente/createPedido", (req, res) => {
     const cedula = parseInt(req.body.cedula)
     const metodo = req.body.metodo
     const total = req.body.total
+    const lista = req.body.lista
 
-    db.query('INSERT INTO pedido(cedula_cliente,metodo,total) VALUES (?,?,?)', [cedula, metodo, total],
+    db.query('INSERT INTO pedido(cedula_cliente,metodo,total,id_platos) VALUES (?,?,?,?)', [cedula, metodo, total, lista],
         (err, result) => {
             if (err) {
                 console.log(err);
@@ -163,6 +164,19 @@ app.post("/pedidos/createReserva",(req,res)=>{
         } else {
             res.send(result)
             console.log('reserva guardada')
+        }
+    })
+})
+
+// PÁGINA ADMIN
+
+app.get("/admin",(req,res)=>{
+    db.query('SELECT * FROM pedido ORDER BY id_platos LIMIT 1',
+    (err,result)=>{
+        if(err){
+            console.log(err)
+        }else{
+            res.send(result)
         }
     })
 })
