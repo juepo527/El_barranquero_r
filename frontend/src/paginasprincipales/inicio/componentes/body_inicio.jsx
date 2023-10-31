@@ -55,16 +55,6 @@ function Body_inicio() {
                 <Outlet />
             </section>
 
-
-            <section className="about">
-                <h2>Sobre nosotros</h2>
-                <p>
-                    Somos un restaurante campestre ubicado en un entorno natural y
-                    tranquilo.
-                </p>
-                <a href="#" className="btn-cta">Conoce más</a>
-            </section>
-
             <section className="menu">
                 <h2>Menú del día</h2>
 

@@ -8,11 +8,12 @@
     align-items: stretch;
     padding: 50px;
     font-size: 50px;
+    height: fit-content;
 }
 
 .izquierda {
     background-color: black;
-    height: 90vh;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,7 +26,7 @@
 
 .derecha {
     background-color: red;
-    height: 90vh;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -43,7 +44,8 @@
     border-radius: 30px;
     background-color: #F2F2F2;
     width: 90%;
-    height: 47%;
+    height: 350px;
+    margin: 10px 0px;
 }
 
 .izquierda .reserva_contenedor {
@@ -54,24 +56,24 @@
     border-radius: 30px;
     bottom: 30px;
     width: 90%;
-    height: 47%;
+    height: 350px;
+    margin: 10px 0px;
 }
 
 .derecha .derecha_arriba {
     background-color: rgba(255, 78, 30, 0.308);
     backdrop-filter: blur(10px);
     width: 90%;
-    height: 40%;
+    height: fit-content;
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1.5fr 1fr;
     grid-column-gap: 20px;
-    grid-row-gap: 20px;
     justify-items: stretch;
     align-items: stretch;
-    padding: 5px;
     border-radius: 30px;
     padding: 10px;
+    margin: 10px 0px;
 }
 
 .derecha .derecha_arriba .ingresos {
@@ -80,15 +82,27 @@
     justify-content: center;
     align-items: center;
     border-radius: 30px;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px 0px;
+    height: fit-content;
 }
 
 .derecha .derecha_arriba .egresos {
     background-color: #F2F2F2;
-    height: 212%;
+    height: 115%;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 30px;
+    flex-direction: column;
+    padding: 10px 30px;
+}
+
+.derecha .derecha_arriba .egresos input{
+    height: 30px;
+    font-size:20px;
+    width: 300px;
 }
 
 .derecha .derecha_arriba .ganancias {
@@ -97,6 +111,9 @@
     justify-content: center;
     align-items: center;
     border-radius: 30px;
+    flex-direction: column;
+    padding: 10px;
+    transform: translateY(-70px);
 }
 
 .derecha .derecha_abajo {
@@ -109,12 +126,13 @@
     justify-content: space-around;
     align-items: center;
     border-radius: 30px;
+    margin: 10px 0px;
 }
 
 .derecha .derecha_abajo .mesas {
     background-color: #F2F2F2;
     width: 45%;
-    height: 90%;
+    height: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -129,13 +147,26 @@
     justify-content: center;
     align-items: center;
     border-radius: 30px;
+    margin: 10px 0px;
+}
+
+.botoncito{
+    width:130px;
+    margin: auto;
+}
+
+.cosito {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
 }
 
 /*Responsive raro */
 @media screen and (max-width: 768px) {
     .general_admin {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
+        /* grid-template-rows: 1fr; */
         grid-column-gap: 0;
         grid-row-gap: 20px;
         padding: 20px;
@@ -144,22 +175,20 @@
 
     .izquierda,
     .derecha {
-        height: auto;
-        padding: 20px;
+        /* height: auto; */
     }
 
     .izquierda .pedido,
     .izquierda .reserva_contenedor,
     .derecha .derecha_arriba,
     .derecha .derecha_abajo {
-        width: 100%;
-        height: auto;
-        padding: 20px;
+        /* width: 100%; */
+        /* height: auto; */
     }
 
     .derecha .derecha_arriba {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        /* grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr; */
     }
 
     .derecha .derecha_abajo {

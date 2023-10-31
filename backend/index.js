@@ -151,35 +151,140 @@ app.post("/datosCliente/createPedido", (req, res) => {
     )
 })
 
-app.post("/pedidos/createReserva",(req,res)=>{
+app.post("/pedidos/createReserva", (req, res) => {
     const cedula = parseInt(req.body.cedula)
     const fecha = req.body.fecha
     const hora = req.body.hora
     const personas = req.body.personas
 
-    db.query('INSERT INTO reservas(cedula_cliente,fecha,hora,num_personas) VALUES (?,?,?,?)',[cedula,fecha,hora,personas],
-    (err,result)=>{
-        if(err){
-            console.log(err)
-        } else {
-            res.send(result)
-            console.log('reserva guardada')
-        }
-    })
+    db.query('INSERT INTO reservas(cedula_cliente,fecha,hora,num_personas) VALUES (?,?,?,?)', [cedula, fecha, hora, personas],
+        (err, result) => {
+            if (err) {
+                console.log(err)
+            } else {
+                res.send(result)
+                console.log('reserva guardada')
+            }
+        })
 })
 
 // PÁGINA ADMIN
 
-app.get("/admin",(req,res)=>{
-    db.query('SELECT * FROM pedido ORDER BY id_platos LIMIT 1',
-    (err,result)=>{
-        if(err){
-            console.log(err)
-        }else{
-            res.send(result)
-        }
-    })
+app.get("/admin/pedido", (req, res) => {
+    db.query('SELECT * FROM pedido WHERE metodo = "recoge" ORDER BY id_pedido LIMIT 1;',
+        (err, result) => {
+            if (err) {
+                console.log(err)
+            } else {
+                res.send(result)
+            }
+        })
 })
+
+app.delete("/admin/pedido/delete/:id", (req, res) => {
+    const id = req.params.id;
+
+    db.query(`DELETE FROM pedido WHERE id_pedido=?;`, [id],
+        (err, result) => {
+            if (err) {
+                console.log(err);
+            } else {
+                res.send(result);
+            }
+        }
+    )
+});
+
+app.get("/admin/domicilio", (req, res) => {
+    db.query('SELECT pedido.*, cliente.direccion FROM pedido INNER JOIN cliente ON pedido.cedula_cliente = cliente.cedula WHERE metodo = "domicilio" ORDER BY id_pedido LIMIT 1;',
+        (err, result) => {
+            if (err) {
+                console.log(err)
+            } else {
+                res.send(result)
+            }
+        })
+})
+
+app.delete("/admin/domicilio/delete/:id", (req, res) => {
+    const id = req.params.id;
+
+    db.query(`DELETE FROM pedido WHERE id_pedido=?;`, [id],
+        (err, result) => {
+            if (err) {
+                console.log(err);
+            } else {
+                res.send(result);
+            }
+        }
+    )
+});
+
+app.get("/admin/contabilidad", (req, res) => {
+    db.query('SELECT * from contabilidad',
+        (err, result) => {
+            if (err) {
+                console.log(err);
+            } else {
+                res.send(result);
+            }
+        })
+})
+
+app.put("/admin/updateIng", (req, res) => {
+    const ingresos = req.body.ingresos;
+
+    db.query('UPDATE contabilidad SET ingresos = ingresos + ?', [ingresos],
+        (err, result) => {
+            if (err) {
+                console.log(err);
+            } else {
+                res.send(result);
+            }
+        }
+    )
+});
+
+app.put("/admin/deleteIng", (req, res) => {
+
+    db.query('UPDATE contabilidad SET ingresos = ?', [0],
+        (err, result) => {
+            if (err) {
+                console.log(err);
+            } else {
+                res.send(result);
+            }
+        }
+    )
+});
+
+app.put("/admin/updateEgr", (req, res) => {
+    const egresos = req.body.egresos;
+
+    db.query('UPDATE contabilidad SET egresos = egresos + ?', [egresos],
+        (err, result) => {
+            if (err) {
+                console.log(err);
+            } else {
+                res.send(result);
+                console.log('cambio')
+            }
+        }
+    )
+});
+
+app.put("/admin/deleteEgr", (req, res) => {
+
+    db.query('UPDATE contabilidad SET egresos = ?', [0],
+        (err, result) => {
+            if (err) {
+                console.log(err);
+            } else {
+                res.send(result);
+            }
+        }
+    )
+});
 
 app.listen(3001, () => {
     console.log("Server is running on port 3001")
