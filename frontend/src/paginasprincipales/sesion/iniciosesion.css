@@ -1,9 +1,80 @@
-form {
-    width: 30vw;
-    margin: auto;
-    margin-top:10vh;
+.inicio-sesion {
+    padding: 57px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    background-color: #e5b9735d;
+}
+
+h1 {
+    text-align: center;
+}
+
+.forminicio {
+    height: 420px;
+    width: 350px;
+    background-color: rgb(255, 255, 255, 0.13);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 50px 35px;
+}
+
+.forminicio * {
+    color: black;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+p {
+    text-align: center;
+    margin-top: 10px;
+}
+/*Responsive*/
+@media screen and (max-width: 768px) {
+    .inicio-sesion {
+        padding: 20px;
+    }
+
+    .forminicio {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 8px;
+    }
+
+    button {
+        width: 100%;
+        padding: 8px;
+        font-size: 18px; 
+    }
+
+    p {
+        margin-top: 20px;
+    }
 }

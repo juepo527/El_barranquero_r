@@ -1,6 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { EffectCards } from 'swiper/modules';
+
+
 import Body_inicio from './componentes/body_inicio';
+
 
 function App() {
   return (
@@ -9,5 +17,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;

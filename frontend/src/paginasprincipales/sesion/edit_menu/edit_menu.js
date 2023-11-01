@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Axios from 'axios';
 import Swal from 'sweetalert2';
+import './edit_menu.css'
 
 function Edit_menu() {
     const [id_plato, setId] = useState()
@@ -30,7 +31,6 @@ function Edit_menu() {
         )
         const file = await res.json();
         setImagen(file.secure_url)
-        console.log(file.secure_url)
         setLoading(false)
         const Toast = Swal.mixin({
             toast: true,
@@ -158,8 +158,8 @@ function Edit_menu() {
     getMenu()
 
     return (
-        <div>
-            <div className="card text-center">
+        <div className="editar_menu">
+            <div className="card text-center formulario">
                 <div className="card-header">
                     Editar menú
                 </div>
@@ -257,7 +257,6 @@ function Edit_menu() {
                                 <td>{val.dia}</td>
                                 <td><img src={val.imagen}></img></td>
                                 <td>
-                                    <div className="btn-group" role="group" aria-label="Basic example">
                                         <button type="button" className="btn btn-info"
                                             onClick={() => {
                                                 editarDatos(val);
@@ -269,7 +268,6 @@ function Edit_menu() {
                                                 eliminar(val);
                                             }}
                                             className="btn btn-danger">Eliminar</button>
-                                    </div>
                                 </td>
                             </tr>
                         })

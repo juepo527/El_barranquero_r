@@ -1,0 +1,19 @@
+.cuerpo_clientes{
+    background-color: #e5b9735d;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+}
+
+.cuerpo_clientes .botones_compra{
+    width:fit-content;
+    padding: 7px;
+}
+
+.cuerpo_clientes .botones_compra button{
+    font-size: 20px;
+    padding: 7px;
+}
