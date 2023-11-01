@@ -234,7 +234,7 @@ function Admin() {
                 }}>Subir</button> </div>
               <button className='btn btn-danger' onClick={() => {
                 eliminarEgresos()
-              }}>Reiniciar ingresos</button>
+              }}>Reiniciar egresos</button>
             </div>
             <div className='ganancias'>
               <h3>Ganancias: </h3>{contabilidad.map((producto) => {

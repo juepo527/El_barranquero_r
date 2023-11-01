@@ -72,7 +72,7 @@ function Menu() {
       </button>
       </div>
 
-      <h1>Lunes</h1>
+      <h1>Nuestros productos</h1>
 
       <Offcanvas show={show} onHide={handleClose} placement={'end'}>
         <Offcanvas.Header closeButton>

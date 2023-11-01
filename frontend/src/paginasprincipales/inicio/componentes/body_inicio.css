@@ -99,7 +99,6 @@
   color: #8b4a00;
   padding: 100px;
   text-align: center;
-
 }
 
 .hero h1 {
@@ -210,11 +209,12 @@ body {
 .swiper-slide:nth-child(10n) {
   background-color: rgb(54, 94, 77);
 }
-.card{
-background: #dd9f3b00;
-border: none;
-border-radius: 20px;
-    
+
+.card {
+  background: #dd9f3b00;
+  border: none;
+  border-radius: 20px;
+
 }
 
 .mySwiperCarrusel {
